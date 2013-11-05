@@ -13,6 +13,7 @@ namespace AutoKams.Controls
 {
     public partial class CameraControl : UserControl
     {
+        private Object thisLock = new Object();
         private FilterInfoCollection vidSources;
         private VideoCaptureDevice camera;
         private Bitmap resizedImage;
@@ -26,8 +27,9 @@ namespace AutoKams.Controls
         private void CameraControl_Load(object sender, EventArgs e)
         {
             vidSources = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            int num = 1;
             foreach (FilterInfo f in vidSources)
-                cmbCam.Items.Add(f.Name);
+                cmbCam.Items.Add((num++).ToString() + ". " + f.Name);
             if (cmbCam.Items.Count > 0)
                 cmbCam.SelectedIndex = 0;
             else
@@ -79,13 +81,13 @@ namespace AutoKams.Controls
             try
             {
                 camera = new VideoCaptureDevice(vidSources[cmbCam.SelectedIndex].MonikerString);
-                foreach (VideoCapabilities c in camera.VideoCapabilities)
-                {
-                    Debug.WriteLine(c.FrameSize);
-                }
+                //foreach (VideoCapabilities c in camera.VideoCapabilities)
+                //{
+                //    Debug.WriteLine(c.FrameSize);
+                //}
 
-                camera.DesiredFrameSize = new Size(320, 240);
-                camera.DesiredFrameRate = 15;
+                //camera.DesiredFrameSize = new Size(320, 240);
+                //camera.DesiredFrameRate = 15;
                 camera.NewFrame += new AForge.Video.NewFrameEventHandler(camera_NewFrame);
                 camera.Start();
             }
@@ -99,9 +101,24 @@ namespace AutoKams.Controls
 
         void camera_NewFrame(object sender, AForge.Video.NewFrameEventArgs eventArgs)
         {
-            capturedImage = (Bitmap)eventArgs.Frame.Clone();
-            resizedImage = BitmapUtil.ResizeImage((Bitmap)eventArgs.Frame.Clone(), picCam.Width, picCam.Height);
+
+            lock (thisLock)
+            {
+                if (capturedImage != null)
+                {
+                    //capturedImage.Dispose();
+                }
+                capturedImage = new Bitmap(eventArgs.Frame);
+            }
+
+            var img = new Bitmap(eventArgs.Frame);
+            resizedImage = BitmapUtil.ResizeImage(img, picCam.Width, picCam.Height);
+            img.Dispose();
+
+            //if (picCam.Image != null)
+            //    this.Invoke(new MethodInvoker(delegate() { picCam.Image.Dispose(); }));
             picCam.Image = resizedImage;
+            resizedImage = null;
         }
 
 

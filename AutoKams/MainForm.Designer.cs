@@ -33,13 +33,19 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrCapture = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtInterval = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tmrClock = new System.Windows.Forms.Timer(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblTimer = new System.Windows.Forms.ToolStripStatusLabel();
             this.cameraControl3 = new AutoKams.Controls.CameraControl();
             this.cameraControl2 = new AutoKams.Controls.CameraControl();
             this.cameraControl1 = new AutoKams.Controls.CameraControl();
+            this.lblCpu = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblMemory = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtInterval)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStart
@@ -69,15 +75,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Auto Capture Control";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Capture Interval (ms):";
-            // 
             // txtInterval
             // 
             this.txtInterval.Location = new System.Drawing.Point(15, 46);
@@ -94,6 +91,36 @@
             0,
             0,
             0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Capture Interval (ms):";
+            // 
+            // tmrClock
+            // 
+            this.tmrClock.Tick += new System.EventHandler(this.tmrClock_Tick);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblTimer,
+            this.lblCpu,
+            this.lblMemory});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 506);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1103, 22);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(0, 17);
             // 
             // cameraControl3
             // 
@@ -119,11 +146,22 @@
             this.cameraControl1.Size = new System.Drawing.Size(339, 302);
             this.cameraControl1.TabIndex = 0;
             // 
+            // lblCpu
+            // 
+            this.lblCpu.Name = "lblCpu";
+            this.lblCpu.Size = new System.Drawing.Size(0, 17);
+            // 
+            // lblMemory
+            // 
+            this.lblMemory.Name = "lblMemory";
+            this.lblMemory.Size = new System.Drawing.Size(0, 17);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1103, 528);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cameraControl3);
             this.Controls.Add(this.cameraControl2);
@@ -133,11 +171,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AutoKams";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtInterval)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -151,6 +193,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown txtInterval;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer tmrClock;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblTimer;
+        private System.Windows.Forms.ToolStripStatusLabel lblCpu;
+        private System.Windows.Forms.ToolStripStatusLabel lblMemory;
 
     }
 }
