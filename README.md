@@ -4,6 +4,10 @@ Automatic Image Capture Through Computer Attached Cameras.
 
 `CaptureKam` (formerly known as `AutoKams`) is a standalone application designed to capture images from USB camera devices, such as webcams and microscopes. It is developed using Microsoft Visual Studio 2010 with C# as the programming language. This application is powered by [AForge.NET framework][aforgenet].
 
+## Downloads
+
+- [CaptureKam v1.0.1](https://github.com/junian/CaptureKam/releases/download/1.0.1/CaptureKam-mark1.0.1.zip)
+
 ## Paper
 
 [Low-Cost Motility Tracking System (LOCOMOTIS) for Time-Lapse Microscopy Applications and Cell Visualisation][paper-url]
