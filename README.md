@@ -2,7 +2,7 @@
 
 `AutoKams` is a standalone application designed to capture images from USB camera devices, such as webcams and microscopes. It is developed using Microsoft Visual Studio 2010 with C# as the programming language. This application is powered by [AForge.NET framework][aforgenet].
 
-![Resut preview](http://journals.plos.org/plosone/article/figure/image?size=medium&id=info:doi/10.1371/journal.pone.0103547.g011)
+![Resut preview](https://1.bp.blogspot.com/-W1bVe_PZ9OU/WoZM_F-GdVI/AAAAAAAAC2g/xlLBgwdxg0QxClVAq5p4LUsbINJTc3lIACLcBGAs/s1600/autokams-preview.png)
 
 ## Releases
 
