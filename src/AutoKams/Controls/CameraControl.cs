@@ -7,9 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using AForge.Video.DirectShow;
 using System.Diagnostics;
-using AutoKams.Utils;
+using Juniansoft.AutoKams.Utils;
 
-namespace AutoKams.Controls
+namespace Juniansoft.AutoKams.Controls
 {
     public partial class CameraControl : UserControl
     {

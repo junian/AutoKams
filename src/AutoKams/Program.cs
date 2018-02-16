@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace AutoKams
+namespace Juniansoft.AutoKams
 {
     static class Program
     {

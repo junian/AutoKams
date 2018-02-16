@@ -1,4 +1,4 @@
-﻿namespace AutoKams
+﻿namespace Juniansoft.AutoKams
 {
     partial class MainForm
     {

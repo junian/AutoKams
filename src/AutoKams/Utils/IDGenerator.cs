@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace AutoKams.Utils
+namespace Juniansoft.AutoKams.Utils
 {
     using System;
     using System.Collections.Generic;

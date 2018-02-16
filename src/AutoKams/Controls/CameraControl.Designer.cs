@@ -1,4 +1,4 @@
-﻿namespace AutoKams.Controls
+﻿namespace Juniansoft.AutoKams.Controls
 {
     partial class CameraControl
     {

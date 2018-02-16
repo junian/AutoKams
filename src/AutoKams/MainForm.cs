@@ -5,14 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using AutoKams.Controls;
-using AutoKams.Utils;
+using Juniansoft.AutoKams.Controls;
+using Juniansoft.AutoKams.Utils;
 using System.IO;
 using System.Diagnostics;
 using System.Drawing.Imaging;
-using AutoKams.Properties;
+using Juniansoft.AutoKams.Properties;
 
-namespace AutoKams
+namespace Juniansoft.AutoKams
 {
     public partial class MainForm : Form
     {
