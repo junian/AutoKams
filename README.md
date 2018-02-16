@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/qvt7ngs70olrm1e1/branch/master?svg=true)](https://ci.appveyor.com/project/junian/autokams/branch/master)
+
 ## About
 
 `AutoKams` is a standalone application designed to capture images from USB camera devices, such as webcams and microscopes. It is developed using Microsoft Visual Studio 2010 with C# as the programming language. This application is powered by [AForge.NET framework][aforgenet].
