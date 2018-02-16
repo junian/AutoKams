@@ -43,9 +43,11 @@
             this.cameraControl3 = new Juniansoft.AutoKams.Controls.CameraControl();
             this.cameraControl2 = new Juniansoft.AutoKams.Controls.CameraControl();
             this.cameraControl1 = new Juniansoft.AutoKams.Controls.CameraControl();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtInterval)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStart
@@ -68,7 +70,7 @@
             this.groupBox1.Controls.Add(this.txtInterval);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnStart);
-            this.groupBox1.Location = new System.Drawing.Point(24, 331);
+            this.groupBox1.Location = new System.Drawing.Point(377, 323);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(284, 97);
             this.groupBox1.TabIndex = 4;
@@ -135,7 +137,7 @@
             // cameraControl3
             // 
             this.cameraControl3.HeaderText = "Camera 3";
-            this.cameraControl3.Location = new System.Drawing.Point(702, 12);
+            this.cameraControl3.Location = new System.Drawing.Point(695, 3);
             this.cameraControl3.Name = "cameraControl3";
             this.cameraControl3.Size = new System.Drawing.Size(339, 302);
             this.cameraControl3.TabIndex = 2;
@@ -143,7 +145,7 @@
             // cameraControl2
             // 
             this.cameraControl2.HeaderText = "Camera 2";
-            this.cameraControl2.Location = new System.Drawing.Point(357, 12);
+            this.cameraControl2.Location = new System.Drawing.Point(350, 3);
             this.cameraControl2.Name = "cameraControl2";
             this.cameraControl2.Size = new System.Drawing.Size(339, 302);
             this.cameraControl2.TabIndex = 1;
@@ -151,21 +153,30 @@
             // cameraControl1
             // 
             this.cameraControl1.HeaderText = "Camera 1";
-            this.cameraControl1.Location = new System.Drawing.Point(12, 12);
+            this.cameraControl1.Location = new System.Drawing.Point(5, 3);
             this.cameraControl1.Name = "cameraControl1";
             this.cameraControl1.Size = new System.Drawing.Size(339, 302);
             this.cameraControl1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Controls.Add(this.cameraControl1);
+            this.panel1.Controls.Add(this.cameraControl2);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.cameraControl3);
+            this.panel1.Location = new System.Drawing.Point(32, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1038, 437);
+            this.panel1.TabIndex = 6;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1103, 528);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.cameraControl3);
-            this.Controls.Add(this.cameraControl2);
-            this.Controls.Add(this.cameraControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -178,6 +189,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtInterval)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,7 +210,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lblTimer;
         private System.Windows.Forms.ToolStripStatusLabel lblCpu;
         private System.Windows.Forms.ToolStripStatusLabel lblMemory;
-
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
