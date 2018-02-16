@@ -6,7 +6,7 @@
 
 ## Releases
 
-- [CaptureKam v1.0.1](https://github.com/junian/CaptureKam/releases/download/1.0.1/CaptureKam-mark1.0.1.zip)
+- [AutoKams v1.0.3](https://github.com/junian/AutoKams/releases/download/v1.0.3/AutoKams.Setup-v1.0.3.msi)
 
 ## Paper
 
