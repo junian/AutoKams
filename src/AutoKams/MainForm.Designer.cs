@@ -38,11 +38,11 @@
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblTimer = new System.Windows.Forms.ToolStripStatusLabel();
-            this.cameraControl3 = new AutoKams.Controls.CameraControl();
-            this.cameraControl2 = new AutoKams.Controls.CameraControl();
-            this.cameraControl1 = new AutoKams.Controls.CameraControl();
             this.lblCpu = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblMemory = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cameraControl3 = new Juniansoft.AutoKams.Controls.CameraControl();
+            this.cameraControl2 = new Juniansoft.AutoKams.Controls.CameraControl();
+            this.cameraControl1 = new Juniansoft.AutoKams.Controls.CameraControl();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtInterval)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -122,6 +122,16 @@
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(0, 17);
             // 
+            // lblCpu
+            // 
+            this.lblCpu.Name = "lblCpu";
+            this.lblCpu.Size = new System.Drawing.Size(0, 17);
+            // 
+            // lblMemory
+            // 
+            this.lblMemory.Name = "lblMemory";
+            this.lblMemory.Size = new System.Drawing.Size(0, 17);
+            // 
             // cameraControl3
             // 
             this.cameraControl3.HeaderText = "Camera 3";
@@ -145,16 +155,6 @@
             this.cameraControl1.Name = "cameraControl1";
             this.cameraControl1.Size = new System.Drawing.Size(339, 302);
             this.cameraControl1.TabIndex = 0;
-            // 
-            // lblCpu
-            // 
-            this.lblCpu.Name = "lblCpu";
-            this.lblCpu.Size = new System.Drawing.Size(0, 17);
-            // 
-            // lblMemory
-            // 
-            this.lblMemory.Name = "lblMemory";
-            this.lblMemory.Size = new System.Drawing.Size(0, 17);
             // 
             // MainForm
             // 

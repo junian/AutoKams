@@ -108,3 +108,4 @@ Backup*/
 UpgradeLog*.XML
 .nuget/
 .vs/
+Thumbs.db

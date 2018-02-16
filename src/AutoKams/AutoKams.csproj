@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>jicon.ico</ApplicationIcon>
+    <ApplicationIcon>..\..\resources\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -105,7 +105,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="jicon.ico" />
+    <Content Include="..\..\resources\icon.ico">
+      <Link>icon.ico</Link>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
