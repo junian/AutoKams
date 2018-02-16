@@ -74,7 +74,7 @@ namespace Juniansoft.AutoKams
                         //Bitmap b = (Bitmap) c.CapturedImage.Clone();
                         lock (thisLock)
                         {
-                            var savePath = rootFolder + "\\" + c.HeaderText + "_-_" + IDGenerator.GenerateDateTimeID() + ".jpg";
+                            var savePath = Path.Combine(rootFolder, c.HeaderText + "_-_" + IDGenerator.GenerateDateTimeID() + ".jpg");
                             Debug.WriteLine(savePath);
                             c.CapturedImage.Save(savePath, ImageFormat.Jpeg);
                         }
@@ -92,7 +92,8 @@ namespace Juniansoft.AutoKams
                 //{
                 StartAllCams();
                 btnStart.Text = "&Stop";
-                rootFolder = IDGenerator.GenerateDateID();
+                var docDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "AutoKams");
+                rootFolder = Path.Combine(docDir, IDGenerator.GenerateDateID());
                 if (!Directory.Exists(rootFolder))
                 {
                     Directory.CreateDirectory(rootFolder);
