@@ -1,30 +1,161 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="AutoKams.Setup" Language="1033" Version="1.0.0.0" Manufacturer="Juniansoft" UpgradeCode="158c8a9f-9310-4f45-b404-99fa0785d7f0">
-		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+  <Product Id="*"
+		Name="$(var.AppName)"
+		Language="1033"
+		Version="$(var.ProductVersion)"
+		UpgradeCode="$(var.UpgradeCode)"
+		Manufacturer="$(var.Manufacturer)">
 
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
+    <Package Description="$(var.AppName) by $(var.Manufacturer)"
+			Comments= "$(var.AppName) by $(var.Manufacturer)"
+			InstallerVersion="200"
+			Compressed="yes"
+			InstallScope="perMachine"
+			InstallPrivileges="elevated"
+		/>
 
-		<Feature Id="ProductFeature" Title="AutoKams.Setup" Level="1">
-			<ComponentGroupRef Id="ProductComponents" />
-		</Feature>
-	</Product>
+    <Media Id="1"
+		       Cabinet="contents.cab"
+		       EmbedCab="yes"
+		       CompressionLevel="high"/>
 
-	<Fragment>
-		<Directory Id="TARGETDIR" Name="SourceDir">
-			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="AutoKams.Setup" />
-			</Directory>
-		</Directory>
-	</Fragment>
+    <Icon Id="ProductIcon"
+		      SourceFile="..\..\resources\icon.ico"/>
+    <Property Id="ARPPRODUCTICON"
+		          Value="ProductIcon"/>
+    <Property Id="ARPHELPLINK"
+		          Value="http://junian.net"/>
+    <Property Id="ARPURLINFOABOUT"
+		          Value="http://lab.junian.net/AutoKams"/>
 
-	<Fragment>
-		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
-			<!-- <Component Id="ProductComponent"> -->
-				<!-- TODO: Insert files, registry keys, and other resources here. -->
-			<!-- </Component> -->
-		</ComponentGroup>
-	</Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="APPLICATIONROOTDIRECTORYHOME" Name="$(var.AppName)">
+          <Directory Id="APPLICATIONROOTDIRECTORY" Name="$(var.ProductVersion)">
+          </Directory>
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolderHome" Name="$(var.AppName)">
+          <Directory Id="ApplicationProgramsFolder" Name="$(var.ProductVersion)"/>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
+      <Component Id="AutoKamsexe"
+           Guid="*" DiskId="1">
+        <File Id="AutoKams.exe"
+				      Name="AutoKams.exe"
+				      Source="..\AutoKams\bin\$(var.Configuration)\AutoKams.exe"
+				      KeyPath="yes" />
+      </Component>
+
+      <Component Id="AutoKamsexeconfig"
+           Guid="*" DiskId="1">
+        <File Id="AutoKams.exe.config"
+				      Name="AutoKams.exe.config"
+				      Source="..\AutoKams\bin\$(var.Configuration)\AutoKams.exe.config"
+				      KeyPath="yes" />
+      </Component>
+
+      <Component Id="AForgedll"
+           Guid="*" DiskId="1">
+        <File Id="AForge.dll"
+				      Name="AForge.dll"
+				      Source="..\AutoKams\bin\$(var.Configuration)\AForge.dll"
+				      KeyPath="yes" />
+      </Component>
+      
+      <Component Id="AForgeVideodll"
+           Guid="*" DiskId="1">
+        <File Id="AForge.Video.dll"
+				      Name="AForge.Video.dll"
+				      Source="..\AutoKams\bin\$(var.Configuration)\AForge.Video.dll"
+				      KeyPath="yes" />
+      </Component>
+      
+      <Component Id="AForgeVideoDirectShowdll"
+           Guid="*" DiskId="1">
+        <File Id="AForge.Video.DirectShow.dll"
+				      Name="AForge.Video.DirectShow.dll"
+				      Source="..\AutoKams\bin\$(var.Configuration)\AForge.Video.DirectShow.dll"
+				      KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut"
+                 Guid="*">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="$(var.AppName) ($(var.ProductVersion))"
+                  Description="$(var.AppName) by $(var.Manufacturer)"
+                  Target="[#AutoKams.exe]"
+                  Icon="ProductIcon"
+                  WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+        <!--
+        <Shortcut Id="DocumentationStartMenuShortcut"
+                    Name="Documentation ($(var.ProductVersion))"
+                    Description="$(var.AppName) Documentation by $(var.Manufacturer)"
+                    Target="[#ControlPanel35EDocumentation.rtf]"
+                    WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+        -->
+        <!--
+				<Shortcut Id="UninstallProduct"             
+                          Name="Uninstall 35E Control Panel"
+                          Description="Uninstalls 35E Control Panel"
+                          Target="[SystemFolder]msiexec.exe"
+                          Arguments="/x [ProductCode]"/>
+				-->
+
+        <RemoveFolder Id="RemoveApplicationProgramsFolderHome"
+                      Directory="ApplicationProgramsFolderHome"
+                      On="uninstall"/>
+        <RemoveFolder Id="RemoveApplicationProgramsFolder"
+                      Directory="ApplicationProgramsFolder"
+                      On="uninstall"/>
+        <RegistryValue Root="HKCU"
+                       Key="Software\Microsoft\Juniansoft\AutoKams\$(var.ProductVersion)"
+                       Name="installed" Type="integer"
+                       Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <InstallExecuteSequence>
+      <RemoveExistingProducts Before="InstallInitialize" />
+    </InstallExecuteSequence>
+
+    <Feature Id="MainApplication" Title="Main Application" Level="1">
+      <ComponentRef Id="AutoKamsexe" />
+      <ComponentRef Id="AutoKamsexeconfig" />
+      <ComponentRef Id="AForgedll" />
+      <ComponentRef Id="AForgeVideodll" />
+      <ComponentRef Id="AForgeVideoDirectShowdll" />
+      <ComponentRef Id="ApplicationShortcut"/>
+    </Feature>
+
+    <UI>
+      <UIRef Id="WixUI_Minimal" />
+      <Publish Dialog="ExitDialog"
+          Control="Finish"
+          Event="DoAction"
+          Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT"
+              Value="Launch $(var.AppName)" />
+
+    <Property Id="WixShellExecTarget"
+		          Value="[#AutoKams.exe]" />
+    <CustomAction Id="LaunchApplication"
+        BinaryKey="WixCA"
+        DllEntry="WixShellExec"
+        Impersonate="yes" />
+
+    <PropertyRef Id="NETFRAMEWORK20"/>
+    <Condition
+			Message="This application requires .NET Framework 2.0. Please install the .NET Framework then run this installer again. For more information, you can contact admin@junian.net.">
+      <![CDATA[Installed OR NETFRAMEWORK20]]>
+    </Condition>
+  </Product>
 </Wix>
