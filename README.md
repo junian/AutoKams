@@ -1,3 +1,5 @@
+[![GitHub release](https://img.shields.io/github/release/junian/AutoKams.svg)](https://github.com/junian/AutoKams/releases)
+[![Github All Releases](https://img.shields.io/github/downloads/junian/AutoKams/total.svg)](https://github.com/junian/AutoKams/releases)
 [![Build status](https://ci.appveyor.com/api/projects/status/qvt7ngs70olrm1e1/branch/master?svg=true)](https://ci.appveyor.com/project/junian/autokams/branch/master)
 
 ## About
