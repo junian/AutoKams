@@ -1,5 +1,5 @@
 theme: jekyll-theme-cayman
 title: AutoKams
 description: Automatic Image Capture Through Computer Attached Cameras
-show_downloads: true
+show_downloads: false
 google_analytics: UA-90418854-6
