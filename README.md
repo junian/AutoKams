@@ -26,6 +26,8 @@ This software is licensed under LGPL v3.
 
 [![LGPL v3][lgpl-logo]][license]
 
+Made with ☕ by [Junian.dev](https://www.junian.dev).
+
 [lgpl-logo]: https://www.gnu.org/graphics/lgplv3-88x31.png "LGPL v3"
 [license]: https://github.com/junian/AutoKams/blob/master/LICENSE
 [aforgenet]: http://www.aforgenet.com/ "AForge.NET"
