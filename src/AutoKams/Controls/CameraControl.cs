@@ -68,7 +68,7 @@ namespace Juniansoft.AutoKams.Controls
         {
             try
             {
-                camera.SignalToStop();
+                camera?.SignalToStop();
             }
             catch (Exception ex)
             {
