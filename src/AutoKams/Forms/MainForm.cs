@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Text;
@@ -11,6 +12,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Drawing.Imaging;
 using Juniansoft.AutoKams.Properties;
+using Juniansoft.AutoKams.Services;
 
 namespace Juniansoft.AutoKams.Forms
 {
@@ -22,15 +24,38 @@ namespace Juniansoft.AutoKams.Forms
         private DateTime startTime;
         private PerformanceCounter cpuUsage;
         private PerformanceCounter memoryUsage;
+        private AssemblyService _assemblyService;
 
         public MainForm()
         {
             InitializeComponent();
 
+            _assemblyService = AssemblyService.Current;
+
+            UpgradeSettings();
+
+            this.Icon = Resources.Favicon;
+            this.Text = $"{_assemblyService.Product} - v{_assemblyService.Version.ToString(3)}";
+
             cpuUsage = new PerformanceCounter("Process", "% Processor Time",
                                     Process.GetCurrentProcess().ProcessName);
             memoryUsage = new PerformanceCounter("Process", "Working Set",
                                     Process.GetCurrentProcess().ProcessName);
+        
+        }
+
+        private void UpgradeSettings()
+        {
+            var configPath = ConfigurationManager
+                .OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal)
+                .FilePath;
+            if (!File.Exists(configPath))
+            {
+                //Existing user config does not exist, so load settings from previous assembly
+                Settings.Default.Upgrade();
+                Settings.Default.Reload();
+                Settings.Default.Save();
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
