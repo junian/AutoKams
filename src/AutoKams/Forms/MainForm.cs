@@ -12,7 +12,7 @@ using System.Diagnostics;
 using System.Drawing.Imaging;
 using Juniansoft.AutoKams.Properties;
 
-namespace Juniansoft.AutoKams
+namespace Juniansoft.AutoKams.Forms
 {
     public partial class MainForm : Form
     {

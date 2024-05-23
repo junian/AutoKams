@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Juniansoft.AutoKams.Forms;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
