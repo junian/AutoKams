@@ -25,29 +25,17 @@
     <Version>$(AssemblyVersion)</Version>
     <PackageVersion>$(AssemblyVersion)</PackageVersion>
     
-    <ApplicationIcon>..\..\assets\Favicon.ico</ApplicationIcon>
-    
-    <Platforms>AnyCPU;ARM64;x64;x86</Platforms>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>..\..\resources\icon.ico</ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup>
+    <ApplicationIcon>..\..\resources\Favicon.ico</ApplicationIcon>
     <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
     <AssemblyOriginatorKeyFile>AutoKams.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  
   <ItemGroup>
     <Compile Update="Controls\CameraControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\..\resources\icon.ico">
-      <Link>icon.ico</Link>
-    </Content>
-  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="AForge" Version="2.2.5" />
     <PackageReference Include="AForge.Video" Version="2.2.5" />
