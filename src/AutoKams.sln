@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoKams", "AutoKams\AutoKams.csproj", "{A9DA895F-724F-4BA3-A3F1-11E06F61B532}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoKams.Setup", "AutoKams.Setup\AutoKams.Setup.csproj", "{CC2DDE1C-3B40-42F3-B54C-F846B0055E14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +17,15 @@ Global
 		{A9DA895F-724F-4BA3-A3F1-11E06F61B532}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9DA895F-724F-4BA3-A3F1-11E06F61B532}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9DA895F-724F-4BA3-A3F1-11E06F61B532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC2DDE1C-3B40-42F3-B54C-F846B0055E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2DDE1C-3B40-42F3-B54C-F846B0055E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2DDE1C-3B40-42F3-B54C-F846B0055E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2DDE1C-3B40-42F3-B54C-F846B0055E14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20DEBDCE-258C-4BAA-9B17-7936DB831BDB}
 	EndGlobalSection
 EndGlobal
