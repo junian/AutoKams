@@ -17,7 +17,7 @@
 
 ## Releases
 
-- [AutoKams v1.0.4](https://github.com/junian/AutoKams/releases/download/v1.0.4/AutoKams.Setup-v1.0.4.msi)
+- [AutoKams v1.0.4](https://github.com/junian/AutoKams/releases/download/v1.0.4/AutoKams-v1.0.4.msi)
 
 ## Paper
 
