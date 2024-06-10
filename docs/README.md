@@ -1,15 +1,23 @@
-[![GitHub release](https://img.shields.io/github/release/junian/AutoKams.svg)](https://github.com/junian/AutoKams/releases)
-[![Github All Releases](https://img.shields.io/github/downloads/junian/AutoKams/total.svg)](https://github.com/junian/AutoKams/releases)
+<h1 align="center">AutoKams</h1>
+
+<p align="center">A standalone application designed to capture images from USB camera devices, such as webcams and microscopes.</p>
+
+<p align="center">
+  <a href="https://github.com/junian/AutoKams/releases"><img src="https://img.shields.io/github/release/junian/AutoKams.svg?style=for-the-badge" alt="GitHub release" /></a>
+  <a href="https://github.com/junian/AutoKams/releases"><img src="https://img.shields.io/github/downloads/junian/AutoKams/total.svg?style=for-the-badge" alt="Github All Releases" /></a>
+</p>
+
+<p align="center">
+  <img src="https://1.bp.blogspot.com/-W1bVe_PZ9OU/WoZM_F-GdVI/AAAAAAAAC2g/xlLBgwdxg0QxClVAq5p4LUsbINJTc3lIACLcBGAs/s1600/autokams-preview.png" alt="Resut preview" />
+</p>
 
 ## About
 
-`AutoKams` is a standalone application designed to capture images from USB camera devices, such as webcams and microscopes. It is developed using Microsoft Visual Studio 2010 with C# as the programming language. This application is powered by [AForge.NET framework][aforgenet].
-
-![Resut preview](https://1.bp.blogspot.com/-W1bVe_PZ9OU/WoZM_F-GdVI/AAAAAAAAC2g/xlLBgwdxg0QxClVAq5p4LUsbINJTc3lIACLcBGAs/s1600/autokams-preview.png)
+`AutoKams` is a standalone application designed to capture images from USB camera devices, such as webcams and microscopes. It is developed using Microsoft Visual Studio with C# as the programming language. This application is powered by [AForge.NET framework][aforgenet].
 
 ## Releases
 
-- [AutoKams v1.0.3](https://github.com/junian/AutoKams/releases/download/v1.0.3/AutoKams.Setup-v1.0.3.msi)
+- [AutoKams v1.0.4](https://github.com/junian/AutoKams/releases/download/v1.0.4/AutoKams.Setup-v1.0.4.msi)
 
 ## Paper
 
