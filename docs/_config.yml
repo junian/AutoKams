@@ -1,8 +1,13 @@
 title: AutoKams
 description: Automatic Image Capture Through Computer Attached Cameras
 show_downloads: false
+google_analytics: G-BJ58GF34YZ
 # theme: just-the-docs
 remote_theme: junian/jekyll-jtdocs
+url: "https://www.junian.dev" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/AutoKams" # the subpath of your site, e.g. /blog
+repository: junian/AutoKams # for github-metadata
+enforce_canonical_domain: true
 
 markdown: CommonMarkGhPages
 commonmark:
@@ -165,7 +170,7 @@ callouts:
 # Google Analytics Tracking (optional)
 # Supports a CSV of tracking ID strings (eg. "UA-1234567-89,G-1AB234CDE5")
 # Note: the main Just the Docs site does *not* use Google Analytics.
-ga_tracking: G-MKQK789F6L
+ga_tracking: G-BJ58GF34YZ
 
 google_adsense: ca-pub-1135979461412092
 
