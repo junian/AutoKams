@@ -25,9 +25,9 @@
     <Property Id="ARPPRODUCTICON"
 		          Value="ProductIcon"/>
     <Property Id="ARPHELPLINK"
-		          Value="http://junian.net"/>
+		          Value="https://www.junian.dev/contact/"/>
     <Property Id="ARPURLINFOABOUT"
-		          Value="http://lab.junian.net/AutoKams"/>
+		          Value="https://www.junian.dev/AutoKams"/>
 
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
